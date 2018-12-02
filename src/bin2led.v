@@ -3,6 +3,7 @@ module bin2led (
     output[3:0] an,
     input[15:0] keycode
     );
+    
     wire zero = keycode[0] & ~keycode[1] & keycode[2] & ~keycode[3] & ~keycode[4] & ~keycode[5] & keycode[6];
     wire one = ~keycode[0] & keycode[1] & keycode[2] & ~keycode[3] & keycode[4] & ~keycode[5] & ~keycode[6];
     wire two = ~keycode[0] & keycode[1] & keycode[2] & keycode[3] & keycode[4] & ~keycode[5] & ~keycode[6];

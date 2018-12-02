@@ -4,12 +4,12 @@ module random (
     output [3:0] num
     );
 
-    reg [3:0] count <= 4'h0;
+    reg [3:0] count <= 4'b0;
 
     always @ (posedge clk)
     begin
-        if (count == 4'h9)
-            count <= 4'h0
+        if (count == 4'b1001)
+            count <= 4'b0;
         else
             count <= count + 1;
     end

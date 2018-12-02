@@ -1,8 +1,10 @@
-module alu (output [3:0] result,
+module alu (
+    output [3:0] result,
     output zero,
     input A,
     input B,
-    input [2:0] control);
+    input [2:0] control
+    );
 
    wire w0, w1, w2, w3;
 

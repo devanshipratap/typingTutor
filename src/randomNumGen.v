@@ -1,4 +1,4 @@
-module random (
+module randomNumGen (
     input clk,
     input reset,
     output [3:0] num
@@ -16,4 +16,4 @@ module random (
 
     assign num = count;
 
-endmodule // random
+endmodule // randomNumGen

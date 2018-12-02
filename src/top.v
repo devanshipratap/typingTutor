@@ -56,32 +56,6 @@ module top(
         .oflag(flag)
     );
 
-    wire [3:0] random = $urandom_range(9, 0);
-
-//    clk_wiz c3(clk, clk_);
-
-//    clock_divider #(8000) c1(clk_, clk_out_1);
-//    clock_divider #(16000) c2(clk_, clk_out_2);
-
-    // always@(keycode)
-    //     if (keycode[7:0] == 8'hf0) begin
-    //         cn <= 1'b0;
-    //         bcount <= 3'd0;
-    //     end else if (keycode[15:8] == 8'hf0) begin
-    //         cn <= keycode != keycodev;
-    //         bcount <= 3'd5;
-    //     end else begin
-    //         cn <= keycode[7:0] != keycodev[7:0] || keycodev[15:8] == 8'hf0;
-    //         bcount <= 3'd2;
-    //     end
-    //
-    // always@(posedge clk)
-    //     if (flag == 1'b1 && cn == 1'b1) begin
-    //         start <= 1'b1;
-    //         keycodev <= keycode;
-    //     end else
-    //         start <= 1'b0;
-
     bin2led b1(seg, an, keycode);
 
 endmodule

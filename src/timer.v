@@ -22,7 +22,7 @@ module timer (
                 currTime <= 0;
                 clockCounter <= 0;
             end
-        else if (clockCounter == 1 && enable == 1'b1)
+        else if (clockCounter == 100000000 && enable == 1'b1)
             begin
                 currTime += 1;
                 clockCounter <= 1;

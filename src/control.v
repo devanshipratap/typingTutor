@@ -1,9 +1,13 @@
 module fsm (
     output score_change,
-    output ,
-    input correct
+    output score_reset,
+    output store_val,
+    input correct,
+    input change
     );
 
     wire sInitial, sCorrect, sWrong, sReset;
+    
+    assign store_val = change;
 
 endmodule // fsm

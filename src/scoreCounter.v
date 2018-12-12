@@ -13,6 +13,6 @@ module scoreCounter (
     mux2 #(3) mx(control, 3'b011, 3'b010, increase);
 
     alu4 scoreAddOrSub(score, zero, oldScore, 4'b1, control);
-    register #(4, 0) reg(oldScore, score, clk, enable, reset);
+    register #(4, 0) r1(oldScore, score, clk, enable, reset);
 
 endmodule // scoreCounter

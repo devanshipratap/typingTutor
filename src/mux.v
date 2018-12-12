@@ -1,5 +1,9 @@
 // output is A (when control == 0) or B (when control == 1)
 module mux2(out, A, B, control);
+
+    parameter
+        width = 1;
+        
     output out;
     input  A, B;
     input  control;

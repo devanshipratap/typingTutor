@@ -1,8 +1,8 @@
 module alu (
     output [3:0] result,
     output zero,
-    input A,
-    input B,
+    input [3:0] A,
+    input [3:0] B,
     input [2:0] control
     );
 

@@ -3,7 +3,7 @@ module randomNumGen (
     output [3:0] num
     );
 
-    reg [3:0] count <= 4'b0;
+    reg [3:0] count = 4'b0;
 
     always @ (posedge clk)
     begin

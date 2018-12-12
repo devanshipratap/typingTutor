@@ -24,12 +24,12 @@ module timer (
             end
         else if (clockCounter == 100000000 && enable == 1'b1)
             begin
-                currTime += 1;
+                currTime <= currTime + 1;
                 clockCounter <= 1;
             end
         else
             begin
-                clockCounter += 1;
+                clockCounter <= clockCounter + 1;
             end
     end
 

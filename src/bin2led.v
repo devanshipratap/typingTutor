@@ -1,6 +1,7 @@
 module bin2led (
-    output[6:0] seg,
-    output[3:0] an,
+//    output[6:0] seg,
+//    output[3:0] an,
+    output change,
     input[15:0] keycode
     );
     
@@ -14,18 +15,19 @@ module bin2led (
     wire seven = keycode[0] & ~keycode[1] & keycode[2] & keycode[3] & keycode[4] & keycode[5] & ~keycode[6];
     wire eight = ~keycode[0] & keycode[1] & keycode[2] & keycode[3] & keycode[4] & keycode[5] & ~keycode[6];
     wire nine = ~keycode[0] & keycode[1] & keycode[2] & ~keycode[3] & ~keycode[4] & ~keycode[5] & keycode[6];
+    assign change = zero | one | two | three | four | five | six | seven | eight | nine;
 
-    assign seg[0] = ~(zero | two | three | five | six | seven | eight | nine);
-    assign seg[1] = ~(zero | one | two | three | four | seven | eight | nine);
-    assign seg[2] = ~(zero | one | three | four | five | six | seven | eight | nine);
-    assign seg[3] = ~(zero | two | three | five | six | eight | nine);
-    assign seg[4] = ~(zero | two | six | eight);
-    assign seg[5] = ~(zero | four | five | six | eight | nine);
-    assign seg[6] = ~(two | three | four | five | six | eight | nine);
+//    assign seg[0] = ~(zero | two | three | five | six | seven | eight | nine);
+//    assign seg[1] = ~(zero | one | two | three | four | seven | eight | nine);
+//    assign seg[2] = ~(zero | one | three | four | five | six | seven | eight | nine);
+//    assign seg[3] = ~(zero | two | three | five | six | eight | nine);
+//    assign seg[4] = ~(zero | two | six | eight);
+//    assign seg[5] = ~(zero | four | five | six | eight | nine);
+//    assign seg[6] = ~(two | three | four | five | six | eight | nine);
 
-    assign an[3] = 1;
-    assign an[2] = 1;
-    assign an[1] = 1;
-    assign an[0] = ~(zero | one | two | three | four | five | six | seven | eight | nine);
+//    assign an[3] = 1;
+//    assign an[2] = 1;
+//    assign an[1] = 1;
+//    assign an[0] = ~(zero | one | two | three | four | five | six | seven | eight | nine);
 
 endmodule // bin2led

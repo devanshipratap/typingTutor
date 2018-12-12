@@ -1,16 +1,17 @@
-module display(sw, clk, seg, an);
-        output [6:0] seg;
-        output [3:0] an;
-        input[3:0] random_num_in;
-        input[3:0] score_in;
-        input[3:0] time_in;
-        input clk;
+module display(
+        input[3:0] random_num_in,
+        input[3:0] score_in,
+        input[3:0] time_in,
+        input clk,
+        output [6:0] seg,
+        output [3:0] an
+        );
 
         wire clk_, clk_out_1, clk_out_2;
         wire [3:0] one, ten;
         wire [6:0] random_num, score, time_ones, time_tens;
 
-        clk_wiz c3(clk, clk_);
+        clk_wiz c3(clk, clk_); // Put in toplevel
 
         clock_divider #(8000) c1(clk_, clk_out_1);
         clock_divider #(16000) c2(clk_, clk_out_2);

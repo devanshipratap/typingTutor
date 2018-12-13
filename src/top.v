@@ -11,14 +11,14 @@ module top(
     wire [3:0] num, newnum;
 //    reg[3:0] num;
 
-    wire [15:0] keycode; 
+    wire [15:0] keycode;
     wire change;
             clock_divider #(800) c1(clk, clk_);
 
     decoder bs(clk, PS2Data, PS2Clk, keycode);
-        
+
     randomNumGen rm(clk, newnum);
-    
+
     register #(4) reg1(num, newnum, clk_, change, 1'b0);
 
     BCDToLED bitch(seg, num);
